@@ -45,7 +45,7 @@ def gmail_next():
 
 def log_into_gmail(login_email, login_password):
     try:
-        driver.get('https://www.google.com/gmail/about/')
+        driver.get(gmail)
         sign_in_button = driver.find_element(By.XPATH, "//a[contains(text(), 'Sign in')]")
         sign_in_button.click()
         input_email = driver.find_element(By.ID, "identifierId")
