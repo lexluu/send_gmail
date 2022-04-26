@@ -45,7 +45,6 @@ def gmail_next():
 
 def log_into_gmail(login_email, login_password):
     try:
-        driver.get(gmail)
         sign_in_button = driver.find_element(By.XPATH, "//a[contains(text(), 'Sign in')]")
         sign_in_button.click()
         input_email = driver.find_element(By.ID, "identifierId")
@@ -56,6 +55,7 @@ def log_into_gmail(login_email, login_password):
         gmail_next()
     except Exception:
         # sometimes it needs to retry
+        driver.get(gmail)
         log_into_gmail(login_email, login_password)
 
 
